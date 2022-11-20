@@ -193,13 +193,20 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
             fungame=1
             scorefirst+=1
             scorepirveli.text=scorefirst.toString()
-            Toast.makeText(this, "გამარჯვებულია X", Toast.LENGTH_SHORT).show()
+            if(scorefirst==3){
+                Toast.makeText(this, "თამაში მოიგო X-მა", Toast.LENGTH_SHORT).show()
+            }else
+                Toast.makeText(this, "რაუნდი მოიგო X-მა", Toast.LENGTH_SHORT).show()
         }
         if (winnerplayer==2){
             fungame=1
             scoresecond+=1
             scoremeore.text=scoresecond.toString()
-            Toast.makeText(this, "გამარჯვებულია 0", Toast.LENGTH_SHORT).show()
+            if(scoresecond==3){
+                Toast.makeText(this, "თამაში მოიგო 0-მა", Toast.LENGTH_SHORT).show()
+
+            }else
+                Toast.makeText(this, "რაუნდი მოიგო 0-მა", Toast.LENGTH_SHORT).show()
         }
         if(firstPlayer.size + secondPlayer.size ==9 && winnerplayer==0){
             Toast.makeText(this, "ფრე", Toast.LENGTH_SHORT).show()
@@ -244,6 +251,11 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
 
         firstPlayer.clear()
         secondPlayer.clear()
+
+        if(scorefirst==3 || scoresecond==3){
+            activPlayer=3
+        }
+
     }
 
 
